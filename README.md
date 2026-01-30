@@ -1,6 +1,6 @@
 # MCP Chat
 
-MCP Chat is a command-line interface application that enables interactive chat capabilities with AI models through the Anthropic API. The application supports document retrieval, command-based prompts, and extensible tool integrations via the MCP (Model Control Protocol) architecture.
+MCP Chat is a CLI app for interactive AI-driven chat using the Anthropic API, with Ollama for local AI on a Mac Mini M4. It supports document retrieval, command-based prompts, calculation tools, and extensible integrations via the MCP (Model Control Protocol) architecture.
 
 ## Prerequisites
 
