@@ -118,7 +118,7 @@ def fetch_doc(doc_id: str) -> str:
 
 def format_document(
     doc_id: str=Field(description="Id of the document to format.")
-) -> list[base.Messages]:
+) -> list[base.Message]:
     prompt =f"""
     Your goal is to reformat a document to be written with markdown syntax.
 
