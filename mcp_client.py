@@ -42,14 +42,15 @@ class MCPClient:
         return self._session
 
     async def list_tools(self) -> list[types.Tool]:
-        # TODO: Return a list of tools defined by the MCP server
-        return []
+        # Access the current session and get a lists of tools defined by the MCP server
+        result = await self.session().list_tools()
+        return result.tools
 
     async def call_tool(
         self, tool_name: str, tool_input: dict
     ) -> types.CallToolResult | None:
-        # TODO: Call a particular tool and return the result
-        return None
+        # Access the current session and call a specific tool using the tool name and input provided by the AI assistant.
+        return await self.session().call_tool(tool_name, tool_input)
 
     async def list_prompts(self) -> list[types.Prompt]:
         # TODO: Return a list of prompts defined by the MCP server
@@ -82,7 +83,8 @@ async def main():
         command="uv",
         args=["run", "mcp_server.py"],
     ) as _client:
-        pass
+        result = await _client.list_tools()
+        print(result)
 
 
 if __name__ == "__main__":
